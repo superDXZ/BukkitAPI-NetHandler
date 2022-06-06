@@ -16,10 +16,10 @@ jobs:
       - name: Checkout from GitHub
         uses: actions/checkout@master
         
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@master
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets.ARTIFACTS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::123456789100:role/my-github-actions-role
           aws-region: us-east-2
         
       - name: Use JDK 1.8
